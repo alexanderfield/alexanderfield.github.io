@@ -1,0 +1,21 @@
+{
+  "name": "alexanderfield.github.io",
+  "main": "index.js",
+  "version": "0.0.1",
+  "homepage": "https://github.com/alexanderfield/alexanderfield.github.io",
+  "authors": [
+    "alexanderfield <alexander.field@yahoo.com>"
+  ],
+  "description": "playground",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-material": "~0.11.0"
+  }
+}
