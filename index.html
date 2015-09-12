@@ -8,19 +8,47 @@
 <body layout="column" ng-controller="AppCtrl">
     <md-toolbar layout="row">
       <div class="md-toolbar-tools">
-        <md-button ng-click="toggleSidenav('left')" hide-gt-sm class="md-icon-button">
+        <md-button ng-click="toggleSidenav('left')"  class="md-icon-button">
           <md-icon aria-label="Menu" md-svg-icon="resources/menu.svg"></md-icon>
         </md-button>
-        <h1>Coming soon</h1>
-      </div>
+      </div>      
     </md-toolbar>
 
     <div layout="row" flex>
-        <md-sidenav layout="column" class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$mdMedia('gt-sm')">
+        <md-sidenav layout="column" class="md-sidenav-left md-whiteframe-z2" md-component-id="left"  ng-click="toggleSidenav('left')">
         </md-sidenav>
         
         <div layout="column" flex id="content">
             <md-content layout="column" flex class="md-padding">
+                
+                 <div ng-controller="DemoCtrl as ctrl" layout="column">
+  <md-content class="md-padding">
+    <form ng-submit="$event.preventDefault()">
+      <md-autocomplete
+          md-selected-item="ctrl.selectedItem"
+          md-search-text-change="ctrl.searchTextChange(ctrl.searchText)"
+          md-search-text="ctrl.searchText"
+          md-selected-item-change="ctrl.selectedItemChange(item)"
+          md-items="item in ctrl.querySearch(ctrl.searchText)"
+          md-item-text="item.display"
+          md-min-length="0"
+          placeholder="What interests do we share?">
+        <md-item-template>
+          <span md-highlight-text="ctrl.searchText" md-highlight-flags="^i">{{item.display}}</span>
+        </md-item-template>
+        <md-not-found>
+          No matches found for "{{ctrl.searchText}}".
+        </md-not-found>
+      </md-autocomplete>
+      <br/>
+ 
+      
+    </form>
+  </md-content>
+</div>
+                
+                
+                
             </md-content>
         </div>
     </div>
