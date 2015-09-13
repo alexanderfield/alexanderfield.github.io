@@ -1,6 +1,11 @@
 require('angular');
 
-var app = angular.module('Homepage', ['ngMaterial']);
+var app = angular.module('Homepage', ['ngMaterial'])
+    .config(function($mdThemingProvider) {
+        $mdThemingProvider.theme('default')
+            .primaryPalette('grey')
+            .accentPalette('red');
+    });
 
 app.controller('AppCtrl', ['$scope', '$mdSidenav', function($scope, $mdSidenav){
     $scope.toggleSidenav = function(menuId) {
