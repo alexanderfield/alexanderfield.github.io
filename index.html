@@ -6,9 +6,10 @@
   </head>
  
 <body layout="column" ng-controller="AppCtrl">
+
     <md-toolbar layout="row">
-      <div class="md-toolbar-tools">
-        <md-button ng-click="toggleSidenav('left')"  class="md-icon-button">
+      <div class="md-toolbar-tools" ng-click="toggleSidenav('left')">
+        <md-button  class="md-icon-button">
           <md-icon aria-label="Menu" md-svg-icon="resources/menu.svg"></md-icon>
         </md-button>
           <h2><i>Views, mine...</i></h2>
@@ -20,15 +21,15 @@
 
 
     
-              <md-content layout="row">
-                <md-button ng-click="toggleSidenav('left')">
-                  Close
-                </md-button>
+              <md-content layout="row" >
+                  <div class="md-toolbar-tools" ng-click="toggleSidenav('left')">
+                  Menu
+                  </div>
               </md-content>
 
                 <form>
                   <md-input-container>
-                    <label for="testInput">Test input</label>
+                    <label for="testInput">Thoughts?</label>
                     <input id="testInput" type="text" ng-model="data">
                   </md-input-container>
                 </form>

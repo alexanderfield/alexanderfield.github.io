@@ -1,3 +1,5 @@
+require('angular');
+
 var app = angular.module('Homepage', ['ngMaterial']);
 
 app.controller('AppCtrl', ['$scope', '$mdSidenav', function($scope, $mdSidenav){

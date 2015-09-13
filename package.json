@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "",
   "dependencies": {
-    "webpack": "^1.12.1"
   },
   "devDependencies": {
     "angular-animate": "^1.4.5",
