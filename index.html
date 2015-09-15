@@ -8,62 +8,12 @@
 <body layout="column" ng-controller="AppCtrl">
     <div layout="row" flex>
 
-        <!-- Side Navigation Window, toggled by clicking on the Header -->
-        <md-sidenav layout="column" class="md-sidenav-left md-whiteframe-z2" md-component-id="left-side-nav" >
-            <md-content layout="row" >
-                <div class="md-toolbar-tools" ng-click="toggleSidenav('left-side-nav')">
-                    Menu
-                </div>
-            </md-content>
-            <form>
-                <div ng-controller="DemoCtrl as ctrl" layout="column" >
-                    <md-content>
-                        <form ng-submit="$event.preventDefault()">
-                            <md-autocomplete
-                                    md-selected-item="ctrl.selectedItem"
-                                    md-search-text-change="ctrl.searchTextChange(ctrl.searchText)"
-                                    md-search-text="ctrl.searchText"
-                                    md-selected-item-change="ctrl.selectedItemChange(item)"
-                                    md-items="item in ctrl.querySearch(ctrl.searchText)"
-                                    md-item-text="item.display"
-                                    md-min-length="0"
-                                    placeholder="Interests we share?">
-                                <md-item-template>
-                                    <span md-highlight-text="ctrl.searchText" md-highlight-flags="^i">{{item.display}}</span>
-                                </md-item-template>
-                                <md-not-found>
-                                    No matches found for "{{ctrl.searchText}}".
-                                </md-not-found>
-                            </md-autocomplete>
-                        </form>
-                    </md-content>
-                </div>
+        <div ui-view></div>
 
-                <md-input-container>
-                    <label for="testInput">Thoughts?</label>
-                    <input id="testInput" type="text" ng-model="data">
-                </md-input-container>
-            </form>
-        </md-sidenav>
+        <div ng-include="'src/sidenav.html'"></div>
+        <div ng-include="'src/main.html'"></div>
 
-        <!-- Main Content Window (Column) -->
-        <div layout="column" flex id="content" >
 
-            <md-toolbar  md-scroll-shrink ng-if="true" layout="row">
-                <div class="md-toolbar-tools" ng-click="toggleSidenav('left-side-nav')">
-                    <md-button  class="md-icon-button">
-                        <md-icon aria-label="Menu" md-svg-icon="resources/menu.svg"></md-icon>
-                    </md-button>
-                </div>
-            </md-toolbar>
-
-            <div layout="row" flex >
-                <md-content layout="column" flex>
-                    <img src="resources/nyc.jpg" width="100%"/>
-                </md-content>
-            </div>
-
-        </div>
     </div>
     
     <!-- Angular Material Dependencies -->

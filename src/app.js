@@ -1,6 +1,6 @@
 require('angular');
 
-var app = angular.module('Homepage', ['ngMaterial'])
+var app = angular.module('Homepage', ['ngMaterial', 'ui.router'])
     .config(function($mdThemingProvider) {
         $mdThemingProvider.theme('default')
             .primaryPalette('grey')

@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "dependencies": {
+    "angular-ui-router": "^0.2.15"
   },
   "devDependencies": {
     "angular-animate": "^1.4.5",
