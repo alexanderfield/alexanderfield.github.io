@@ -1,6 +1,7 @@
-require('angular');
 
-var app = angular.module('Homepage', ['ngMaterial', 'ui.router'])
+require('angular');
+require('angular-material');
+var app = angular.module('Homepage', ['ngMaterial'])
     .config(function($mdThemingProvider) {
         $mdThemingProvider.theme('default')
             .primaryPalette('grey')
@@ -9,8 +10,10 @@ var app = angular.module('Homepage', ['ngMaterial', 'ui.router'])
 
 app.controller('AppCtrl', ['$scope', '$mdSidenav', function($scope, $mdSidenav){
     $scope.toggleSidenav = function(menuId) {
-    $mdSidenav(menuId).toggle();    
+    $mdSidenav(menuId).toggle();
     };
+
+
 }]);
 
 (function () {

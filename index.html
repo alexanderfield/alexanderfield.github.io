@@ -1,27 +1,46 @@
 <html lang="en" ng-app="Homepage">
   <head>
-    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/0.9.4/angular-material.min.css"/>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=RobotoDraft:300,400,500,700,400italic"/>
+    <link rel="stylesheet" href="node_modules/angular-material/angular-material.css" />
+    <!--link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/0.9.4/angular-material.min.css"/-->
+    <!--link rel="stylesheet" href="https://fonts.googleapis.com/css?family=RobotoDraft:300,400,500,700,400italic"/-->
     <meta name="viewport" content="width=device-width, initial-scale=1" />
   </head>
  
 <body layout="column" ng-controller="AppCtrl">
     <div layout="row" flex>
 
-        <div ui-view></div>
 
         <div ng-include="'src/sidenav.html'"></div>
-        <div ng-include="'src/main.html'"></div>
+        <!-- Main Content Window (Column) -->
+        <div layout="column" flex id="content" >
 
+            <md-toolbar layout="row">
+                <div class="md-toolbar-tools" ng-click="toggleSidenav('left-side-nav')">
+                    <md-button  class="md-icon-button">
+                        <md-icon aria-label="Menu" md-svg-icon="resources/menu.svg"></md-icon>
+                    </md-button>
+                </div>
+            </md-toolbar>
 
+            <div layout="row">
+                <img src="resources/nyc.jpg" class="img-nyc" id="img-nyc"/>
+            </div>
+        </div>
     </div>
     
-    <!-- Angular Material Dependencies -->
+    <!-- Angular Material Dependencies >
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-animate.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-aria.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/angular_material/0.9.4/angular-material.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angular_material/0.9.4/angular-material.min.js"></script-->
     <script src="bundle.js"></script>
-    
+    <link rel="stylesheet" href="src/app.css" class="css"/>
+    <script class="javascript">
+        (function() {
+            var x = document.getElementById("img-nyc");
+            x.height = x.width * 1.5;
+            console.log("resized height to " + x.height)
+        })();
+    </script>
     </body>
 </html>
